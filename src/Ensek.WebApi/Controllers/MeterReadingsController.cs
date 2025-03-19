@@ -9,8 +9,8 @@ namespace Ensek.WebApi.Controllers
 	public class MeterReadingsController(
 		ISender sender,
 		IConfiguration configuration,
-		ILogger<MeterReadingsController> logger): ControllerBase
-    {
+		ILogger<MeterReadingsController> logger) : ControllerBase
+	{
 		private readonly ISender _sender = sender;
 		private readonly IConfiguration _configuration = configuration;
 		private readonly ILogger<MeterReadingsController> _logger = logger;

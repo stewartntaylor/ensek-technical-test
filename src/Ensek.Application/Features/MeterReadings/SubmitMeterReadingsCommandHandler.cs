@@ -2,9 +2,6 @@
 using Ensek.Application.Common.Files;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using System.Xml;
-using Ensek.Domain.Entities;
 
 namespace Ensek.Application.Features.MeterReadings;
 
@@ -81,7 +78,7 @@ public class SubmitMeterReadingsCommandHandler(
 				{
 					// Write the batch to the DB
 					await _applicationDbContext.SaveChangesAsync(cancellationToken);
-				}	
+				}
 			}
 			catch (Exception ex)
 			{
