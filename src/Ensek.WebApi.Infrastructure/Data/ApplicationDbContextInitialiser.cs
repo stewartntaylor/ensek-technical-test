@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Ensek.WebApi.Infrastructure.Data;
 
 public class ApplicationDbContextInitialiser(
-	IApplicationDbContext dbContext, 
+	IApplicationDbContext dbContext,
 	IAccountsFile customerAccountsFile)
 {
 	private readonly IApplicationDbContext _dbContext = dbContext;

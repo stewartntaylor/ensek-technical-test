@@ -90,7 +90,7 @@ AccountId,MeterReadingDateTime,MeterReadValue,
 	{
 		// Act
 		var response = await Client.PostAsync("meter-reading-uploads", new MultipartFormDataContent());
-		
+
 		// Assert
 		response.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
 	}

@@ -2,5 +2,5 @@
 
 namespace Ensek.Application.Features.MeterReadings;
 
-public record SubmitMeterReadingsCommand(string UploadedFilepath) 
+public record SubmitMeterReadingsCommand(string UploadedFilepath)
 	: IRequest<SubmitMeterReadingsCommandResult>;

@@ -6,11 +6,11 @@ using Serilog;
 
 namespace Ensek.WebApi
 {
-    public class Program
-    {
-        public static async Task Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+	public class Program
+	{
+		public static async Task Main(string[] args)
+		{
+			var builder = WebApplication.CreateBuilder(args);
 
 			builder.Host.UseSerilog((context, configuration) =>
 				configuration.ReadFrom.Configuration(context.Configuration)
@@ -20,8 +20,8 @@ namespace Ensek.WebApi
 
 			builder.Services.AddControllers();
 
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+			builder.Services.AddEndpointsApiExplorer();
+			builder.Services.AddSwaggerGen();
 
 			builder.Services.AddApplicationServices();
 			builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -30,12 +30,12 @@ namespace Ensek.WebApi
 
 			var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+			// Configure the HTTP request pipeline.
+			if (app.Environment.IsDevelopment())
+			{
+				app.UseSwagger();
+				app.UseSwaggerUI();
+			}
 			else
 			{
 				app.UseHsts();
@@ -45,8 +45,8 @@ namespace Ensek.WebApi
 			app.UseExceptionHandler();
 
 			app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.MapControllers();
+			app.UseAuthorization();
+			app.MapControllers();
 
 			app.MapHealthChecks("/health");
 
@@ -57,6 +57,6 @@ namespace Ensek.WebApi
 			}
 
 			app.Run();
-        }
-    }
+		}
+	}
 }
